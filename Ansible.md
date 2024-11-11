@@ -68,6 +68,27 @@ En somme, Ansible combine simplicité, flexibilité, et puissance pour offrir un
 
 ### Installation
 
+Ansible fonctionne sans agent. Cela implique qu'il n'est necessaire de l'installer que sur le serveur de controle (noeud de controle). Le noeud de controle doit être une machine linux (le wsl de Windows peut aussi être utilisé).
+
+- Installation avec `pipx`:
+  
+```
+$ pipx install --include-deps ansible
+```
+Mise à jour
+```
+$ pipx upgrade --include-injected ansible
+```
+
+- Installation avec `pip`
+
+```
+$ python3 -m pip install --user ansible
+```
+Mise à jour
+```
+$ python3 -m pip install --upgrade --user ansible
+```
 
 ### ...
 
