@@ -1,11 +1,11 @@
 # Ansible
 
 ## Généralités
-
+<div align="justify">
+  
 ### C'est quoi Ansible?
 ​
-
-Ansible est une plateforme de gestion de la configuration qui automatise le stockage, les serveurs et la mise en réseau. Lorsque vous utilisez Ansible pour configurer ces composants, les tâches manuelles complexes deviennent reproductibles et sont moins vulnérables aux erreurs. ​Ansible offre une grande flexibilité et s’adapte à divers scénarios. Ses applications vont de l’automatisation de déploiements à la gestion de configurations, en passant par l’orchestration de tâches et la gestion d’événements.
+Ansible est une plateforme de gestion de la configuration qui automatise le stockage, les serveurs et la mise en réseau. Lorsque vous l'utilisez  pour configurer ces composants, les tâches manuelles complexes deviennent reproductibles et sont moins vulnérables aux erreurs. ​Ansible offre une grande flexibilité et s’adapte à divers scénarios. Ses applications vont de l’automatisation de déploiements à la gestion de configurations, en passant par l’orchestration de tâches et la gestion d’événements.
 
 ### Problématique d'Ansible
 
@@ -113,8 +113,8 @@ Les modules sont des petits programmes intégrés à Ansible qui effectuent des 
 Les tâches Ansible sont idempotentes, ce qui signifie que les playbooks peuvent être exécutés plusieurs fois sans modifier l’état final du système s’il est déjà conforme aux configurations. Par exemple, si vous demandez à Ansible de s’assurer qu’un package est installé, il vérifiera d’abord l’état du package avant de tenter de l’installer.
 
 #### Variables et rôles
-•	Variables : Ansible permet l'utilisation de variables pour personnaliser les configurations en fonction des machines ou des groupes de machines, ce qui améliore la flexibilité.
-•	Rôles : Un rôle est un ensemble de playbooks et de configurations organisées de manière modulaire. Les rôles facilitent la réutilisation et la maintenance des configurations pour des configurations complexes.
+- Variables : Ansible permet l'utilisation de variables pour personnaliser les configurations en fonction des machines ou des groupes de machines, ce qui améliore la flexibilité.
+- Rôles : Un rôle est un ensemble de playbooks et de configurations organisées de manière modulaire. Les rôles facilitent la réutilisation et la maintenance des configurations pour des configurations complexes.
 
 #### Exécution des playbooks
 Une fois que tout est prêt (inventaire, playbook, variables, etc.), Ansible exécute le playbook en utilisant la commande suivante :
@@ -129,3 +129,4 @@ Pour des informations sensibles comme des mots de passe, Ansible propose Ansible
 ## Conclusion
 
 Ansible est un outil puissant qui aide les équipes à automatiser les configurations de systèmes et les déploiements d’applications, en fournissant un cadre cohérent et flexible pour la gestion d'infrastructure à l’échelle. Il est adapté aux environnements cloud, sur site, et hybrides.Grâce à sa simplicité et sa richesse en fonctionnalités, il est largement utilisé pour des tâches d'automatisation, de configuration et d'orchestration, aidant ainsi les équipes à assurer la stabilité et la rapidité de leurs déploiements.
+</div>
