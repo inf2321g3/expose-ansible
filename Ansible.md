@@ -3,6 +3,9 @@
 ## Généralités
 
 ### C'est quoi Ansible?
+​
+
+Ansible est une plateforme de gestion de la configuration qui automatise le stockage, les serveurs et la mise en réseau. Lorsque vous utilisez Ansible pour configurer ces composants, les tâches manuelles complexes deviennent reproductibles et sont moins vulnérables aux erreurs. ​Ansible offre une grande flexibilité et s’adapte à divers scénarios. Ses applications vont de l’automatisation de déploiements à la gestion de configurations, en passant par l’orchestration de tâches et la gestion d’événements.
 
 ### Problématique d'Ansible
 
@@ -90,8 +93,39 @@ Mise à jour
 $ python3 -m pip install --upgrade --user ansible
 ```
 
-### ...
+### FONCTIONNEMENT
+
+Ansible fonctionne en automatisant des tâches via des playbooks, en se connectant aux machines cibles, et en exécutant des instructions pour atteindre l’état souhaité des configurations. Voici un aperçu de son fonctionnement :
+
+#### Architecture sans agent
+Ansible est un outil sans agent, ce qui signifie qu’il n’a pas besoin d’installation sur les machines qu’il gère (cibles), contrairement à d'autres outils de gestion de configuration. Il se connecte aux cibles via SSH (ou WinRM pour Windows) depuis une machine de contrôle, généralement un serveur Ansible ou une station de travail où Ansible est installé.
+
+#### Utilisation d'un inventaire
+L’inventaire est un fichier texte (par défaut /etc/ansible/hosts) qui répertorie les machines cibles par leurs adresses IP ou noms de domaine. Il peut être structuré en groupes pour appliquer des configurations à un ensemble spécifique de machines.
+
+#### Playbooks : le cœur des configurations
+Les configurations Ansible sont écrites dans des playbooks, des fichiers YAML qui contiennent les instructions pour configurer les systèmes. Un playbook est constitué de tâches, chaque tâche étant une action que vous voulez exécuter, comme installer un logiciel ou configurer un fichier. Les tâches appellent des modules intégrés d’Ansible, qui contiennent les actions spécifiques.
+
+#### Modules Ansible
+Les modules sont des petits programmes intégrés à Ansible qui effectuent des actions spécifiques sur les cibles, comme la gestion de fichiers, l’installation de logiciels, la gestion de services, la configuration réseau, etc. Ansible dispose de centaines de modules, et il est aussi possible de créer des modules personnalisés pour répondre à des besoins spécifiques.
+
+#### Idempotence : l’état souhaité
+Les tâches Ansible sont idempotentes, ce qui signifie que les playbooks peuvent être exécutés plusieurs fois sans modifier l’état final du système s’il est déjà conforme aux configurations. Par exemple, si vous demandez à Ansible de s’assurer qu’un package est installé, il vérifiera d’abord l’état du package avant de tenter de l’installer.
+
+#### Variables et rôles
+•	Variables : Ansible permet l'utilisation de variables pour personnaliser les configurations en fonction des machines ou des groupes de machines, ce qui améliore la flexibilité.
+•	Rôles : Un rôle est un ensemble de playbooks et de configurations organisées de manière modulaire. Les rôles facilitent la réutilisation et la maintenance des configurations pour des configurations complexes.
+
+#### Exécution des playbooks
+Une fois que tout est prêt (inventaire, playbook, variables, etc.), Ansible exécute le playbook en utilisant la commande suivante :
+ansible-playbook nom_du_playbook.yml
+Ansible se connecte aux hôtes de l’inventaire et exécute les tâches dans l'ordre spécifié. Il affiche des messages d’état (OK, CHANGED, FAILED) pour chaque tâche, indiquant si elle a été modifiée ou s’il y a eu une erreur.
+
+#### Gestion des secrets avec Ansible Vault
+Pour des informations sensibles comme des mots de passe, Ansible propose Ansible Vault pour chiffrer les fichiers de variables. Vous pouvez ainsi inclure des informations sensibles dans vos configurations sans compromettre leur sécurité.
 
 ## Démo
 
 ## Conclusion
+
+Ansible est un outil puissant qui aide les équipes à automatiser les configurations de systèmes et les déploiements d’applications, en fournissant un cadre cohérent et flexible pour la gestion d'infrastructure à l’échelle. Il est adapté aux environnements cloud, sur site, et hybrides.Grâce à sa simplicité et sa richesse en fonctionnalités, il est largement utilisé pour des tâches d'automatisation, de configuration et d'orchestration, aidant ainsi les équipes à assurer la stabilité et la rapidité de leurs déploiements.
