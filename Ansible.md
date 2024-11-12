@@ -9,7 +9,7 @@ Ansible est une plateforme de gestion de la configuration qui automatise le stoc
 
 ### Problématique d'Ansible
 
-Ansible est conçu pour résoudre des problèes liés à la gestion et à l'automatisation de l'infrastructure informatique, en particulier pour les environnements de grande envergure ou complexes. Les principales problématiques sont les suivantes :
+Ansible est conçu pour résoudre des problèmes liés à la gestion et à l'automatisation de l'infrastructure informatique, en particulier pour les environnements de grande envergure ou complexes. Les principales problématiques sont les suivantes :
 
 - Difficulté à gérer efficacement les tâches répétitives dans l'administration des serveurs
 - Risque d'incohérence dans les configurations des différentes machines d'un environnement
