@@ -124,7 +124,27 @@ Ansible se connecte aux hôtes de l’inventaire et exécute les tâches dans l'
 #### Gestion des secrets avec Ansible Vault
 Pour des informations sensibles comme des mots de passe, Ansible propose Ansible Vault pour chiffrer les fichiers de variables. Vous pouvez ainsi inclure des informations sensibles dans vos configurations sans compromettre leur sécurité.
 
-## Démo
+### Composants principaux
+
+![Ilustration architecture Ansible](https://github.com/user-attachments/assets/dc2cb984-e018-41fe-81ef-d410d0364eef)
+
+#### Noeud de contrôle
+C'est la machine depuis laquelle les commandes Ansibles sont lancées.
+
+#### Hôtes
+Ce sont les machines contrôlés par les noeuds de contrôle.
+
+#### Inventaire
+Liste des noeuds gérés par Ansible.
+Les inventaires sont présentés sous forme de fichiers contenant les noms de donaines ou les adresses ip des hôtes.
+![Contenu d'un exemple de fichier d'inventaire sous le format .ini](https://github.com/user-attachments/assets/7df40b36-5373-4e75-a659-4e1eda1f0b72)
+
+#### Playbook
+C'est une liste de Play.
+Une play est une association d'hôtes à des tâches.
+
+#### Modules
+Ce sont des codes ou des librairies que Ansible copie et exécute sur les hôtes. Ils sont utilisés dans plays par les tâches.
 
 ## Conclusion
 
