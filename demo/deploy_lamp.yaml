@@ -1,0 +1,30 @@
+- name: Pull and Run Lamp
+  hosts: server1
+  become: true
+  vars_files:
+    - vault.yml
+    - docker_credentials.yml
+  tasks:
+    - name: Log in to DockerHub
+      docker_login:
+        username: "{{ docker_username }}"
+        password: "{{ docker_password }}"
+
+    - name: Pull Docker image from DockerHub
+      docker_image:
+        name: jeankouss/lamp:first
+        source: pull
+
+    - name: Run Docker container
+      docker_container:
+        name: lamp_container
+        image: jeankouss/lamp:first
+        state: started
+        restart_policy: always
+        published_ports:
+          - "8080:80"
+
+    - name: Ensure Docker container is running
+      docker_container:
+        name: lamp_container
+        state: started
